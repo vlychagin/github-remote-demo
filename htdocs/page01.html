@@ -1,0 +1,103 @@
+<!DOCTYPE html data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание на 11.03.2025 - применение Bootstrap</title>
+    
+        <!-- картинка для отображения в заголовке вкладки браузера -->
+        <link href="/images/smile.png" rel="icon" type="image/x-icon">
+    
+        <!-- подключение стилей Bootstrap -->
+        <link rel="stylesheet" href="/lib/css/bootstrap.min.css ">
+        <script src="/lib/js/bootstrap.bundle.min.js"></script>
+
+        <!-- подключение собственных стилей -->
+        <link rel="stylesheet" href="/css/style.css" />        
+    </head>
+    
+    <body>
+      <!-- навигация -->
+      <nav class="container-fluid py-3">
+        <a href="/index.html" class="btn btn-outline-secondary">Главная</a>
+        <a href="/htdocs/page01.html" class="btn btn-outline-secondary active">Страница 1</a>
+        <a href="/htdocs/page02.html" class="btn btn-outline-secondary">Страница 2</a>
+        <a href="/htdocs/page03.html" class="btn btn-outline-secondary">Страница 3</a>
+        <a href="/htdocs/pa`ge04.html" class="btn btn-outline-secondary">Страница 4</a>
+    </nav>
+    
+    <!-- контент -->
+    <main class="container">
+    
+        <a href="#collapsable-form" class="btn btn-primary me-3 mb-3" data-bs-toggle="collapse">Образец верстки формы</a>
+        <div id="collapsable-form" class="collapse w-50">
+            <figure>
+                <img class="w-100" src="/images/forms/form2.png" alt="Образец для верстки, флома 2" />
+            </figure>
+        </div>
+
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-form2">
+           Показать форму обратной связи
+        </button>
+
+        <div class="modal fade" id="modal-form2">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Форма обратной связи</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+        
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        
+                        <!-- может быть форма, но submit может быть за пределами формы -->
+                        <form id="form2" method="get" action="#" class="border-1 p-3">
+        
+                            <div class="mb-3">
+                                <label class="form-label">
+                                <input type="text" name="name" /> 
+                                Ваше имя
+                                </label>
+                            </div>
+                
+                            <div class="mb-3">
+                                <label class="form-label">
+                                <input type="email" name="email" /> 
+                                Электронная почта
+                                </label>
+                            </div>
+                
+                            <div class="mb-3">
+                                <label class="form-label">
+                                <input type="text" name="topic" /> Тема сообщения
+                                </label>
+                            </div>
+                
+                            <div class="mb-3">
+                                <label class="form-label" for="id_text">Текст сообщения:</label>
+                                <textarea class="form-control" id="id_text" name="text" rows="5" value="">
+                                </textarea>
+                            </div>
+                        </form>                    
+                    </div>
+        
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button form="form2" class="btn btn-primary mb-3" type="submit">
+                            Отправить
+                        </button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- футер -->
+    <footer class="container-fluid text-light-50 py-5">
+        <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+    </footer>
+  </body>
+  </html>

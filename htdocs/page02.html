@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание на 04.03.2025 - применение Bootstrap</title>
+    
+        <!-- картинка для отображения в заголовке вкладки браузера -->
+        <link href="/images/smile.png" rel="icon" type="image/x-icon">
+    
+        <!-- подключение стилей Bootstrap -->
+        <link rel="stylesheet" href="/lib/css/bootstrap.min.css ">
+        <script src="/lib/js/bootstrap.bundle.min.js"></script>
+
+        <!-- подключение собственных стилей -->
+        <link rel="stylesheet" href="/css/style.css" />        
+    </head>
+    
+    <body>
+      <!-- навигация -->
+      <nav class="container-fluid bg-dark text-light py-3">
+        <a href="/index.html" class="btn btn-outline-secondary">Главная</a>
+        <a href="/htdocs/page01.html" class="btn btn-outline-secondary">Страница 1</a>
+        <a href="/htdocs/page02.html" class="btn btn-outline-secondary active">Страница 2</a>
+        <a href="/htdocs/page03.html" class="btn btn-outline-secondary">Страница 3</a>
+        <a href="/htdocs/page04.html" class="btn btn-outline-secondary">Страница 4</a>
+    </nav>
+    
+    <!-- контент -->
+    <main class="container">
+      <a href="#collapsable" class="btn btn-primary me-3 mb-3" data-bs-toggle="collapse">Задание на верстку формы</a>
+      <div id="collapsable" class="collapse w-50">
+          <p>
+            <b>Вторая страница:</b> верстка формы ввода сведений о пациенте: фамилия, имя, 
+            отчество, дата рождения, пол (две радиокнопки), симптомы (оформите в виде 
+            списка с множественным выбором): головная боль, повышенное давление, затрудненное 
+            дыхание, боли в шее, опции (оформите в виде чекбоксов или переключателей): 
+            требуется представитель (помощник), требуется кресло для транспортировки, 
+            требуется медицинское сопровождение, требуется приоритетное обслуживание.
+            Форму реализуйте в модальном окне. В сворачивающемся блоке на странице 
+            разместите этот пункт.
+          </p>
+      </div> 
+
+      <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">
+        Показать форму сведений о пациенте
+     </button>
+
+     <div class="modal fade" id="modal-form">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+  
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <h5 class="modal-title">Ввод сведений о пациенте</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+  
+              <!-- Modal body -->
+              <div class="modal-body">
+                  
+                  <!-- может быть форма, но submit может быть за пределами формы -->
+                  <form id="formPatient" class="p-3" action="#" method="get" enctype="text/plain" >
+                    <div class="mb-3">
+                      <label class="form-label" for="surname">Фамилия:</label>
+                      <input class="form-control" type="text" name="surname" id="surname" />
+                    </div>
+            
+                    <div class="mb-3">
+                      <label class="form-label" for="name">Имя:</label>
+                      <input class="form-control" type="text" name="name" id="name" />
+                  </div>
+            
+                  <div class="mb-3">
+                    <label class="form-label" for="patronymic">Отчество:</label>
+                    <input class="form-control" type="text" name="patronymic" id="patronymic" />    
+                  </div>
+            
+                    <div class="mb-3">
+                      <label class="form-label" for="birth-day">Дата рождения:</label>
+                      <input class="form-control" type="date" name="birthDay" id="birth-day" />
+                    </div>
+            
+                    <div class="mb-3">
+                      <label class="form-label">Пол пациента:</label>
+                      <div class="form-check">
+                        <input type="radio" class="form-check-input" id="id-male" name="gender" value="male" checked>
+                        <label class="form-check-label" for="id-male">Мужской</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="radio" class="form-check-input" id="id-female" name="gender" value="female">
+                        <label class="form-check-label" for="id-female">Женский</label>
+                      </div>
+                    </div>
+            
+                    <!-- сисок симптомов, множественный выбор-->
+                    <div class="mb-3">
+                      <label for="id-sympthomas" class="form-label">Симптомы (можно выбрать несколько):</label>
+                      <select multiple class="form-select" id="id-sympthomas" name="sympthomas">
+                        <option value="1">Головная боль</option>
+                        <option value="2">Повышенное давление</option>
+                        <option value="3">Затрудненное дыхание</option>
+                        <option value="4">Боли в шее</option>
+                      </select>
+                    </div> 
+            
+                    <!-- опции, набор чек-боксов -->
+                    <div class="mb-3">
+                      <label class="form-label">Дополнительные требоваёния:</label>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="id-pre1" name="pre1"/>
+                        <label class="form-check-label" for="id-pre1">требуется представитель (помощник)</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="id-pre2" name="pre2"/>
+                        <label class="form-check-label" for="id-pre2">требуется кресло для транспортировки</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="id-pre3" name="pre3"/>
+                        <label class="form-check-label" for="id-pre3">требуется медицинское сопровождение</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="id-pre4" name="pre4"/>
+                        <label class="form-check-label" for="id-pre4">требуется приоритетное обслуживание</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>                    
+              </div>
+  
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                  <button form="formPatient" class="btn btn-primary mb-3" type="submit">
+                      Отправить
+                  </button>
+              </div>
+  
+          </div>
+      </div>
+     </div>
+  </main>
+
+    <!-- футер -->
+    <footer class="container-fluid bg-dark text-light-50 py-5">
+        <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+    </footer>
+  </body>
+  </html>

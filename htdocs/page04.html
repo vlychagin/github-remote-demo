@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание на 11.03.2025 - применение Bootstrap</title>
+    
+        <!-- картинка для отображения в заголовке вкладки браузера -->
+        <link href="/images/smile.png" rel="icon" type="image/x-icon">
+    
+        <!-- подключение стилей Bootstrap -->
+        <link rel="stylesheet" href="/lib/css/bootstrap.min.css ">
+        <script src="/lib/js/bootstrap.bundle.min.js"></script>
+
+        <!-- подключение собственных стилей -->
+        <link rel="stylesheet" href="/css/style.css" />        
+    </head>
+    
+    <body>
+      <!-- навигация -->
+      <nav class="container-fluid bg-dark text-light py-3">
+        <a href="/index.html" class="btn btn-outline-secondary">Главная</a>
+        <a href="/htdocs/page01.html" class="btn btn-outline-secondary">Страница 1</a>
+        <a href="/htdocs/page02.html" class="btn btn-outline-secondary">Страница 2</a>
+        <a href="/htdocs/page03.html" class="btn btn-outline-secondary">Страница 3</a>
+        <a href="/htdocs/page04.html" class="btn btn-outline-secondary active">Страница 4</a>
+    </nav>
+    
+      <!-- контент -->
+      <main class="container">
+
+        <a href="#collapsable" class="btn btn-primary me-3 mb-3" data-bs-toggle="collapse">Задание на верстку формы</a>
+        <div id="collapsable" class="collapse w-50">
+            <p>
+              <b>Четвертая страница:</b> верстка формы ввода по образцу <b>form3.png</b> 
+              из папки <b>templates</b> (фотографически точное воспроизведение формы 
+              не требуется). Форму реализуйте в модальном окне. В сворачивающемся блоке 
+              на странице разместите этот пункт.
+            </p>
+            <figure>
+              <img class="w-50" src="/images/forms/form3.png" alt="Образец для верстки, флома 3" />
+          </figure>
+        </div> 
+  
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">
+          Показать форму заказа учебных курсов
+       </button>
+  
+       <div class="modal fade" id="modal-form">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Форма заказа учебных курсов</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                   
+                    <!-- может быть форма, но submit может быть за пределами формы -->
+                    <form id="formCurses" class="p-3" action="#" method="get" enctype="text/plain" >
+                      <div class="mb-3">
+                        <label class="form-label" for="id-fullname">Введите ФИО:</label>
+                        <input class="form-control" type="text" name="fullname" id="id-fullname"/>
+                      </div>
+              
+                      <div class="mb-3">
+                        <label class="form-label" for="id-password">Введите пароль:</label>
+                        <input class="form-control" type="password" name="password" id="id-password" />
+                      </div>
+              
+                      <div class="mb-3">
+                        <label class="form-label">Какой диск вы хотите получить?</label>
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="id-cd" name="media" value="cd" checked/>
+                          <label class="form-check-label" for="id-cd">CD</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="id-dvd" name="media" value="dvd"/>
+                          <label class="form-check-label" for="id-dvd">DVD</label>
+                        </div>
+                      </div>
+              
+                      <div class="mb-3">
+                        <label class="form-label">Какие курсы вы хотите видеть на диске?</label>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-ps" name="ps" checked/>
+                          <label class="form-check-label" for="id-ps">Курсы по Фотошопу</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-adw" name="adw"/>
+                          <label class="form-check-label" for="id-adw">Курсы по Adobe Dreamweaver</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-php" name="php"/>
+                          <label class="form-check-label" for="id-php">Курсы по PHP</label>
+                        </div>
+                      </div>
+              
+                      <div class="mb-3">
+                        <label for="id-dist" class="form-label">Выберите способ доставки:</label>
+                        <select class="form-select" id="id-dist" name="distribution">
+                          <option value="1">срочный</option>
+                          <option value="2">почтовое отправление</option>
+                          <option value="3">самовывоз</option>
+                          <option value="4">ценная бандероль</option>
+                        </select>
+                      </div>
+              
+                      <div class="mb-3">
+                        <label class="form-label" for="id-address">Введите адрес для доставки:</label>
+                        <textarea class="form-control w-100" id="id-address" name="text" rows="5" value="">
+                        </textarea>
+                      </div> 
+                  </form>                    
+                </div>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button form="formCurses" class="btn btn-primary mb-3" type="submit">Сделать заказ</button>
+                  <button form="formCurses" class="btn btn-secondary mb-3" type="reset">Отмена</button>
+                </div>
+    
+            </div>
+        </div>
+       </div>
+  </main>
+
+  <!-- футер -->
+  <footer class="container-fluid text-light-50 py-5">
+      <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+  </footer>
+</body>
+</html>
+
+    </main>
+
+    <!-- футер -->
+    <footer class="container-fluid bg-dark text-light-50 py-5">
+        <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+    </footer>
+  </body>
+  </html>

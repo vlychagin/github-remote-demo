@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание на 11.03.2025 - применение Bootstrap</title>
+    
+        <!-- картинка для отображения в заголовке вкладки браузера -->
+        <link href="/images/smile.png" rel="icon" type="image/x-icon">
+    
+        <!-- подключение стилей Bootstrap -->
+        <link rel="stylesheet" href="/lib/css/bootstrap.min.css ">
+        <script src="/lib/js/bootstrap.bundle.min.js"></script>
+
+        <!-- подключение собственных стилей -->
+        <link rel="stylesheet" href="/css/style.css" /> 
+    </head>
+    
+    <body>
+      <!-- навигация -->
+      <nav class="container-fluid py-3">
+          <a href="/index.html" class="btn btn-outline-secondary active">Главная</a>
+          <a href="/htdocs/page01.html" class="btn btn-outline-secondary">Страница 1</a>
+          <a href="/htdocs/page02.html" class="btn btn-outline-secondary">Страница 2</a>
+          <a href="/htdocs/page03.html" class="btn btn-outline-secondary">Страница 3</a>
+          <a href="/htdocs/pa`ge04.html" class="btn btn-outline-secondary">Страница 4</a>
+      </nav>
+    
+      <!-- контент -->
+      <main class="container">
+        <!-- форма по заданию -->
+        <a href="#collapsable-form1" class="btn btn-primary" data-bs-toggle="collapse">Форма №1</a>
+        <div id="collapsable-form1" class="collapse">
+            <figure>
+                <img class="w-100" src="/images/forms/form1.png" alt="Форма 1 для верстки">
+            </figure>
+
+            <form class="ms-3" action="#" method="get" enctype="text/plain" >
+                <fieldset>
+                    <legend class="h5">Личная информация:</legend>
+                    
+                    <div class="mt-3">
+                        <label class="form-label" for="name">Имя:</label>
+                        <input class="form-control" type="text" name="name" id="name" maxlength="20" placeholder="Mickey" />
+                    </div>
+
+                    <div class="mt-1">
+                        <label class="form-label" for="id-surname">Фамилия:</label>
+                        <input class="form-control" type="text" name="surname" id="id-surname" maxlength="20" placeholder="Mouse" />
+                    </div>
+                    
+                    <button class="my-3 btn btn-success" type="submit">Отправить</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="my-3" id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn" data-bs-toggle="collapse" href="#theory">
+                        <h4>Теоретическая часть</h4>
+                    </a>
+                </div>
+                <div id="theory" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="ms-3">
+                            <li>Классы стилей для сворачивающихся элементов</li>
+                            <li>Классы стилей для изображений</li>
+                            <li>Классы стилей для карусели изображений</li>
+                            <li>Классы стилей для модальных окон</li>
+                            <li>Классы стилей для карточек </li>
+                            <li>Классы стилей маркеров с текстом (bages)</li>
+                            <li>Классы стилей для прогресс-баров</li>
+                            <li>Классы стилей для спиннеров</li>
+                            <li>Классы стилей для всплывающих подсказок</li>
+                            <li>Классы для выпадающих меню в <b>Bootstrap</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#practice">
+                        <h4>Практическая часть</h4>
+                    </a>
+                </div>
+                <div id="practice" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Разработайте набор страниц HTML, используйте только стили Bootstrap. 
+                            На главной странице сверстайте это задание на разработку, соблюдать типы шрифтов 
+                            и их размеры не надо. <u>Использовать еще не пройденные классы Bootstrap для навигации 
+                            не надо.</u> Используйте рассмотренные на занятии возможности Bootstrap, навигационное 
+                            меню постройте на базе ссылок – кнопок в горизонтальной строке или вертикальном 
+                            столбце.
+                        </p>
+                        <p>Набор страниц для разработки (размещать в блоке контента):</p>
+                        
+                        <ul class="ms-3">
+                            <li>
+                                <b>Главная страница:</b> при помощи элемента details разместите в верхней части 
+                                форму по образцу <b>form1.png</b> из папки <b>templates</b> (фотографически точное 
+                                воспроизведение 
+                                формы не требуется), затем это задание на разработку
+                            </li>
+                            <li>
+                                <b>Первая страница:</b> верстка формы ввода по образцу <b>form2.png</b> 
+                                из папки <b>templates</b> (фотографически точное воспроизведение формы 
+                                не требуется). 
+                                Форму реализуйте в модальном окне. 
+                            </li>
+                            <li>
+                                <b>Вторая страница:</b> верстка формы ввода сведений о пациенте: фамилия, имя, 
+                                отчество, дата рождения, пол (две радиокнопки), симптомы (оформите в виде 
+                                списка с множественным выбором): головная боль, повышенное давление, затрудненное 
+                                дыхание, боли в шее, опции (оформите в виде чекбоксов или переключателей): 
+                                требуется представитель (помощник), требуется кресло для транспортировки, 
+                                требуется медицинское сопровождение, требуется приоритетное обслуживание.
+                                Форму реализуйте в модальном окне. В сворачивающемся блоке на странице 
+                                разместите этот пункт.
+                            </li>  
+                            <li>
+                                <b>Третья страница:</b> верстка формы ввода сведений об экскурсии: 
+                                название, дата и время начала, место назначения (оформите выпадающим 
+                                списком, гора Ай-Петри, Мраморная пещера, гора Демерджи, Солнечная долина, 
+                                Розовые озера, бухты Севастополя, грязевые вулканы, Евпатория, звездопад 
+                                воспоминаний, заповедник Карадаг), дополнительные требования 
+                                (оформите как набор чек-боксов или переключателей): удобная обувь, 
+                                теплая одежда, питьевая вода, купальные принадлежности.
+                                Форму реализуйте в модальном окне. В сворачивающемся блоке на странице 
+                                разместите этот пункт.
+                            </li>
+                            <li>
+                                <b>Четвертая страница:</b> верстка формы ввода по образцу <b>form3.png</b> 
+                                из папки <b>templates</b> (фотографически точное воспроизведение формы 
+                                не требуется). Форму реализуйте в модальном окне. В сворачивающемся блоке 
+                                на странице разместите этот пункт.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#appendix">
+                        <h4>Дополнительно</h4>
+                    </a>
+                </div>
+                <div id="appendix" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Запись занятия можно скачать 
+                            <a href="https://cloud.mail.ru/public/2JLU/TMgwUMgZA"><b>по этой ссылке</b></a> 
+                            Материалы занятия в этом же архиве. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- футер -->
+  <footer class="container-fluid py-5 mt-5">
+      <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+  </footer>
+  </body>
+  </html>

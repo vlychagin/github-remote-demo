@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание на 11.03.2025 - применение Bootstrap</title>
+    
+        <!-- картинка для отображения в заголовке вкладки браузера -->
+        <link href="/images/smile.png" rel="icon" type="image/x-icon">
+    
+        <!-- подключение стилей Bootstrap -->
+        <link rel="stylesheet" href="/lib/css/bootstrap.min.css ">
+        <script src="/lib/js/bootstrap.bundle.min.js"></script>
+
+        <!-- подключение собственных стилей -->
+        <link rel="stylesheet" href="/css/style.css" />        
+    </head>
+    
+    <body>
+      <!-- навигация -->
+      <nav class="container-fluid py-3">
+        <a href="/index.html" class="btn btn-outline-secondary">Главная</a>
+        <a href="/htdocs/page01.html" class="btn btn-outline-secondary">Страница 1</a>
+        <a href="/htdocs/page02.html" class="btn btn-outline-secondary">Страница 2</a>
+        <a href="/htdocs/page03.html" class="btn btn-outline-secondary active">Страница 3</a>
+        <a href="/htdocs/page04.html" class="btn btn-outline-secondary">Страница 4</a>
+    </nav>
+    
+      <!-- контент -->
+      <main class="container">
+        
+        <a href="#collapsable" class="btn btn-primary me-3 mb-3" data-bs-toggle="collapse">Задание на верстку формы</a>
+        <div id="collapsable" class="collapse w-50">
+            <p>
+              <b>Третья страница:</b> верстка формы ввода сведений об экскурсии: 
+              название, дата и время начала, место назначения (оформите выпадающим 
+              списком, гора Ай-Петри, Мраморная пещера, гора Демерджи, Солнечная долина, 
+              Розовые озера, бухты Севастополя, грязевые вулканы, Евпатория, звездопад 
+              воспоминаний, заповедник Карадаг), дополнительные требования 
+              (оформите как набор чек-боксов или переключателей): удобная обувь, 
+              теплая одежда, питьевая вода, купальные принадлежности.
+              Форму реализуйте в модальном окне. В сворачивающемся блоке на странице 
+              разместите этот пункт.
+            </p>
+        </div> 
+  
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-form">
+          Показать форму сведений об экскурсии
+       </button>
+
+       <div class="modal fade" id="modal-form">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Ввод сведений об экскурсии</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                   
+                    <!-- может быть форма, но submit может быть за пределами формы -->
+                    <form id="formExcurtion" class="p-3" action="#" method="get" enctype="text/plain" >
+                      <div class="mb-3">
+                        <label class="form-label" for="id-excursionName">Название экскурсии:</label>
+                        <input class="form-control" type="text" name="excursionName" id="id-excursionName" />
+                    </div>
+            
+                      <div class="mb-3">
+                        <label class="form-label" for="id-start">Дата и время начала:</label>
+                        <input class="form-control" type="datetime-local" name="start" id="id-start" />
+                      </div>
+            
+                      <!-- список мест проведения экскурсии -->
+                      <div class="mb-3">
+                        <label for="id-target" class="form-label">Место назначения:</label>
+                        <select class="form-select" id="id-target" name="target">
+                          <option value="1">Гора Ай-Петри</option>
+                          <option value="2">Мраморная пещера</option>
+                          <option value="3">Гора Демерджи</option>
+                          <option value="4">Cолнечная долина</option>
+                          <option value="5">Розовые озера</option>
+                          <option value="6">Бухты Севастополя</option>
+                          <option value="7">Грязевые вулканы</option>
+                          <option value="8">Евпатория</option>
+                          <option value="9">Звездопад воспоминаний</option>
+                          <option value="10">Заповедник Карадаг</option>
+                        </select>
+                      </div> 
+            
+                      <!-- опции, набор чек-боксов -->
+                      <div class="mb-3">
+                        <label class="form-label">Дополнительные требования:</label>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-pre1" name="pre1"/>
+                          <label class="form-check-label" for="id-pre1">удобная обувь</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-pre2" name="pre2"/>
+                          <label class="form-check-label" for="id-pre2">теплая одежда</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-pre3" name="pre3"/>
+                          <label class="form-check-label" for="id-pre3">питьевая вода</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="id-pre4" name="pre4"/>
+                          <label class="form-check-label" for="id-pre4">купальные принадлежности</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>                    
+                </div>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button form="formExcurtion" class="btn btn-primary mb-3" type="submit">
+                        Отправить
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+       </div>
+    </main>
+
+    <!-- футер -->
+    <footer class="container-fluid py-5">
+        <h4 class="text-center">Студент Тестировщик, Донецк, 2025</h4>
+    </footer>
+  </body>
+  </html>
